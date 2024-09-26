@@ -1,4 +1,3 @@
-/* * Google Fonts  */
 @import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@100..900&display=swap");
 
 * {
@@ -9,8 +8,6 @@
     list-style: none;
     font-family: "Big Shoulders Text", sans-serif;
 }
-
-/** Variable */
 
 :root {
     --main-color: #273ea1;
@@ -31,6 +28,7 @@ body {
 }
 
 /* * Header */
+
 header {
     position: fixed;
     top: 0;
@@ -85,6 +83,7 @@ header {
 }
 
 .bxs-shopping-bag::after {
+    /* Html deki data-quantity attribute 'ününün değerini css de kullandık  */
     content: attr(data-quantity);
     position: absolute;
     top: 0;
@@ -101,7 +100,10 @@ header {
     font-weight: 500;
 }
 
-/** Home */
+/* ! Anasayfa Html */
+
+/* * Home */
+
 .home {
     position: relative;
     background-color: #f2f0f1;
@@ -124,7 +126,7 @@ header {
 }
 
 .home-img::before {
-    content: 'Coloring Style';
+    content: "Coloring Style";
     text-transform: uppercase;
     font-size: 144px;
     text-align: center;
@@ -132,14 +134,16 @@ header {
     top: -28px;
     z-index: -1;
     color: var(--main-color);
-    font-weight: 850;
+    font-weight: 900;
 }
 
-/** Products */
+/* * Products */
+
 .heading {
     text-align: center;
     font-size: 64px;
     font-weight: 900;
+    margin-top: 20px;
 }
 
 .product-container {
@@ -182,14 +186,16 @@ header {
     margin-top: 45px;
     cursor: pointer;
     text-align: center;
+    border: none;
+    outline: none;
 }
 
+/* *  Footer */
 
-/** Footer  */
 footer {
     background-color: var(--main-color);
     padding: 40px 10px;
-    margin-top: 90px;
+    margin-top: 50px;
 }
 
 .footer-c {
@@ -217,10 +223,10 @@ footer {
 
 .social .bx {
     background-color: var(--bg-color);
+    font-size: 20px;
     padding: 10px;
     color: var(--main-color);
     border-radius: 50%;
-    font-size: 20px;
 }
 
 .footer-box h3 {
@@ -237,8 +243,111 @@ footer {
     padding-top: 30px;
 }
 
+/* ! Cart Html */
 
-/** Responsive */
+.cart-container {
+    margin-top: 115px !important;
+}
+
+.back-homepage {
+    display: flex;
+    align-items: center;
+    color: var(--text-color);
+}
+
+.back-homepage i {
+    font-size: 24px;
+}
+
+.back-homepage span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.shopping-cart {
+    margin-top: 32px;
+}
+
+.cart-box {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    gap: 16px;
+    margin-top: 40px;
+}
+
+#cartItems {
+    display: grid;
+    row-gap: 16px;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr 0.5fr;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(227, 227, 227);
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cart-item-title {
+    font-size: 18px;
+}
+
+.cart-item-quantity {
+    border: 1px solid var(--text-color);
+    outline: none;
+    width: 40px;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.cart-item-price {
+    font-size: 18px;
+}
+
+.remove-from-cart {
+    max-width: 80px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    padding: 8px;
+    background-color: crimson;
+    color: var(--bg-color);
+    cursor: pointer;
+}
+
+.cart-t {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-btn {
+    margin-top: 32px;
+    background-color: var(--main-color);
+    padding: 10px;
+    color: var(--bg-color);
+    font-weight: 600;
+    letter-spacing: 1.7;
+    max-width: 150px;
+}
+
+#cartTotal {
+    font-size: 32px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* * Responsive Tasarım  */
+
 @media (max-width: 1200px) {
     .container {
         width: 90%;
