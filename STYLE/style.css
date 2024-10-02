@@ -389,6 +389,12 @@ footer {
     }
 }
 
+@media (max-width: 700px) {
+    .cart-box {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 550px) {
     .home {
         min-width: 520px;

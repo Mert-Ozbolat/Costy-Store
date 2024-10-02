@@ -76,13 +76,36 @@ export const renderCartItems = () => {
         const removeButton = removeButtons[i];
         removeButton.addEventListener("click", removeFromCart);
     }
+
+
     const quantityInputs = document.getElementsByClassName("cart-item-quantity");
+
     for (let i = 0; i < quantityInputs.length; i++) {
         const quantityInput = quantityInputs[i];
-        quantityInput.addEventListener("change", () => {
-            console.log(`Çalıştı`);
-        });
+        quantityInput.addEventListener("change", onQuantityChange);
     }
+};
+
+const onQuantityChange = (event) => {
+    const newQuantity = +event.target.value;
+    const productId = +event.target.dataset.id;
+
+    if (newQuantity > 0) {
+        const cartItem = cart.find((item) => item.id === productId);
+        if (!cartItem) return;
+        cartItem.quantity = newQuantity;
+
+        saveToLocalStorage(cart);
+
+        // Sepeti Güncelle
+        updateCartIcon(cart);
+
+        // Toplam Fiyatı güncelle
+        displayCartTotal();
+
+    }
+
+
 };
 
 export const displayCartTotal = () => {
